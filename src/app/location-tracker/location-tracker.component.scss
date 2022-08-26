@@ -1,0 +1,129 @@
+@import "../../scss/styles.scss";
+.tracker {
+  display: flex;
+  flex-direction: column;
+  &__address {
+    position: relative;
+    height: 40vh;
+    background-image: url("../../assets/images/pattern-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    h1 {
+      color: white;
+      letter-spacing: 1.8px;
+      font-size: $font-lg;
+      padding: 2.1876rem 0;
+      margin: 0;
+    }
+    .ipSearchBox {
+      height: 55px;
+      width: 498px;
+      margin: auto;
+      position: relative;
+      :hover {
+        cursor: pointer;
+      }
+
+      input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        padding-left: 1.5625rem;
+      }
+      input::placeholder {
+        color: $darkGray;
+        font-size: 0.8125rem;
+        letter-spacing: 1px;
+      }
+      input:hover {
+        cursor: pointer;
+      }
+      input:focus {
+        outline: none;
+      }
+      input.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+      button {
+        background-color: $veryDarkGray;
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        left: 90%;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        :hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .errorCls {
+      font-size: $font-sm;
+      color: red;
+    }
+    .locationDetails {
+      display: grid;
+      grid-template-columns: 250px 250px 250px 250px;
+      position: absolute;
+      background: white;
+      justify-items: left;
+      align-items: center;
+      height: 10rem;
+      width: auto;
+      padding: 0px 15px;
+      border-radius: 10px;
+      margin-top: 2.1876rem;
+      z-index: 1000;
+      //   margin-left: 10.3125rem;
+      //   margin-right: 10.3125rem;
+
+      left: 12vw;
+      h4 {
+        text-align: left;
+        color: $darkGray;
+        font-size: $font-sm;
+        letter-spacing: 1.5px;
+      }
+      h2 {
+        text-align: left;
+        font-size: $font-md;
+      }
+      &__info {
+        position: relative;
+        width: 15.625rem;
+        padding-left: 2.0625rem;
+        padding-right: 3.75rem;
+        word-wrap: break-word;
+        &:not(:last-child) {
+          ::after {
+            content: "";
+            background: lightgray;
+            position: absolute;
+            bottom: 20%;
+            right: 2px;
+            height: 4.375rem;
+            width: 0.5px;
+          }
+        }
+        // border-right: 1px solid $darkGray;
+      }
+      //   &__info::after {
+      //     content: "";
+      //     background: $darkGray;
+      //     position: absolute;
+      //     bottom: 30%;
+      //     left: 0;
+      //     height: 50%;
+      //     width: 1px;
+      //   }
+    }
+  }
+  &__map {
+    flex: 1;
+    height: 60vh;
+    //z-index: 999;
+  }
+}

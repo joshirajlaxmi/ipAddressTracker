@@ -1,0 +1,57 @@
+<section class="tracker">
+  <div class="tracker__address">
+    <h1>IP Address Tracker</h1>
+    <form
+      id="ipForm"
+      #geoLocationForm="ngForm"
+      (ngSubmit)="onSubmit(geoLocationForm)"
+    >
+      <div class="ipSearchBox">
+        <input
+          type="text"
+          placeholder="Search for any IP address or domain"
+          class="ipSearchInput"
+          ngModel
+          name="ipAddress"
+          required
+        />
+        <button
+          class="button"
+          type="submit"
+          [disabled]="!geoLocationForm.valid"
+        >
+          <img src="../../assets/images/icon-arrow.svg" alt="go" />
+        </button>
+      </div>
+      <!-- <span
+        class="errorCls"
+        *ngIf="geoLocationForm.touched && !geoLocationForm.valid"
+        >Wrong format!
+      </span> -->
+    </form>
+    <div *ngIf="locationInfo" class="locationDetails">
+      <div class="locationDetails__info">
+        <h4>IP ADDRESS</h4>
+        <h2>{{ locationInfo.ip }}</h2>
+      </div>
+      <div class="locationDetails__info">
+        <h4>LOCATION</h4>
+        <h2>
+          {{ locationInfo.location.city }},{{ locationInfo.location.region }}
+          {{ locationInfo.location.postalCode }}
+        </h2>
+      </div>
+      <div class="locationDetails__info">
+        <h4>TIMEZONE</h4>
+        <h2>UTC{{ locationInfo.location.timezone }}</h2>
+      </div>
+      <div class="locationDetails__info">
+        <h4>ISP</h4>
+        <h2>{{ locationInfo.isp }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="tracker__map">
+    <app-geo-map></app-geo-map>
+  </div>
+</section>

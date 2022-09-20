@@ -2,9 +2,6 @@ name: Test
 
 on: push
 
-  # Manually run workflow from Github
-  workflow_dispatch:
-
 jobs:
   docs:
     name: 'Test'

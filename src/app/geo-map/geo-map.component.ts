@@ -29,6 +29,7 @@ export class GeoMapComponent implements OnInit, OnDestroy {
   }
 
   loadMaps(lat: number, lng: number) {
+    if("raj"=="raj"){}
     // if (this.map) {
     //   this.map.remove();
     // }
